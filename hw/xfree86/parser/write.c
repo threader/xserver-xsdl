@@ -141,9 +141,9 @@ xf86writeConfigFile(const char *filename, XF86ConfigPtr cptr)
 
         /* Need to fork to change ruid without loosing euid */
         csig = OsSignal(SIGCHLD, SIG_DFL);
-        switch ((pid = fork())) {
+        switch ((pid = vfork())) {
         case -1:
-            ErrorF("xf86writeConfigFile(): fork failed (%s)\n",
+            ErrorF("xf86writeConfigFile(): vfork failed (%s)\n",
                    strerror(errno));
             return 0;
         case 0:                /* child */

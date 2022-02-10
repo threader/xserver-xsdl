@@ -1381,7 +1381,7 @@ System(const char *command)
     }
     DebugF("System: `%s'\n", command);
 
-    switch (pid = fork()) {
+    switch (pid = vfork()) {
     case -1:                   /* error */
         p = -1;
         break;
@@ -1449,7 +1449,7 @@ Popen(const char *command, const char *type)
     }
 #endif
 
-    switch (pid = fork()) {
+    switch (pid = vfork()) {
     case -1:                   /* error */
         close(pdes[0]);
         close(pdes[1]);
@@ -1532,7 +1532,7 @@ Fopen(const char *file, const char *type)
         return NULL;
     }
 
-    switch (pid = fork()) {
+    switch (pid = vfork()) {
     case -1:                   /* error */
         close(pdes[0]);
         close(pdes[1]);

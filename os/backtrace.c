@@ -234,7 +234,7 @@ xorg_backtrace_pstack(void)
         return -1;
     }
 
-    kidpid = fork1();
+    kidpid = vfork();
 
     if (kidpid == -1) {
         /* ERROR */

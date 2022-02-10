@@ -317,7 +317,7 @@ HandleCustomWM_COMMAND(HWND hwnd, WORD command, winPrivScreenPtr pScreenPriv)
                 switch (m->menuItem[j].cmd) {
 #ifdef __CYGWIN__
                 case CMD_EXEC:
-                    if (fork() == 0) {
+                    if (vfork() == 0) {
                         struct rlimit rl;
                         int fd;
 
