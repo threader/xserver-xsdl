@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 #
 # Convert xorg keys from hal FDIs files to xorg.conf InputClass sections.
 # Modified from Martin Pitt's original fdi2mpi.py script:
