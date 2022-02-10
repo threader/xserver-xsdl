@@ -2183,12 +2183,12 @@ if test "x$XWIN" = xyes; then
 
 dnl XWin requires OpenGL spec files in order to generate wrapper code for native GL functions
 	if [test "x$XWIN" = xyes && test "x$GLX" = xyes] ; then
-           AC_CHECK_PROG(PYTHON3, python3, python3)
-           if test -z "$PYTHON3"; then
-                AC_MSG_ERROR([python3 not found])
+           AC_CHECK_PROG(PYTHON2, python2, python2)
+           if test -z "$PYTHON2"; then
+                AC_MSG_ERROR([python2 not found])
            fi
            AC_MSG_CHECKING(for python module lxml)
-           $PYTHON3 -c "import lxml;"
+           $PYTHON2 -c "import lxml;"
            if test $? -ne 0 ; then
                 AC_MSG_ERROR([not found])
            fi

@@ -1,9 +1,9 @@
-python3 = import('python3')
+python2 = import('python2')
 
 # XWin requires OpenGL spec files in order to generate wrapper code for native GL functions
-py3 = python3.find_python()
-if run_command(py3, '-c', 'import lxml;').returncode() != 0
-    error('python3 lxml module not found')
+py2 = python2.find_python()
+if run_command(py2, '-c', 'import lxml;').returncode() != 0
+    error('python2 lxml module not found')
 endif
 
 khronos_spec_dir = dependency('khronos-opengl-registry').get_pkgconfig_variable('specdir')

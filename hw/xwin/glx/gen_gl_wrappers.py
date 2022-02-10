@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 #
 # python script to generate cdecl to stdcall wrappers for GL functions
 # adapted from genheaders.py
